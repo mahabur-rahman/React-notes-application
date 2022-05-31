@@ -17,12 +17,14 @@ const App = () => {
   const addNote = (text) => {
     // console.log(text);
     const date = new Date();
+
     const createNote = {
       id: nanoid(),
       text: text,
       date: date.toLocaleDateString(),
     };
     const newNote = [...notes, createNote];
+
     setNotes(newNote);
   };
 

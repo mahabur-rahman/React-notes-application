@@ -9,8 +9,14 @@ const AddNote = ({ handleAddNote }) => {
 
   //   save note after btn click
   const handleClickSave = (e) => {
-    handleAddNote(text);
-    setText("");
+    // console.log(text.trim().length);
+
+    if (text.trim().length > 0) {
+      handleAddNote(text);
+      setText("");
+    } else {
+      alert("Please adding something!");
+    }
   };
 
   return (
