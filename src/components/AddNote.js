@@ -9,7 +9,8 @@ const AddNote = ({ handleAddNote }) => {
 
   //   save note after btn click
   const handleClickSave = (e) => {
-    handleAddNote("hey");
+    handleAddNote(text);
+    setText("");
   };
 
   return (
