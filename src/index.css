@@ -16,3 +16,18 @@ button {
 .add_note {
     white-space: pre-wrap;
 }
+
+
+/* toggle dark mode */
+
+.toggle_btn {
+    background: rgb(4, 93, 4) !important;
+}
+
+.dark_mode {
+    background: #000;
+}
+
+.dark_mode h2 {
+    color: #000;
+}

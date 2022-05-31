@@ -6,6 +6,7 @@ import { nanoid } from "nanoid";
 // comp
 import NoteList from "./components/NoteList";
 import Search from "./components/Search";
+import Toolbar from "./components/Toolbar";
 
 const App = () => {
   const [notes, setNotes] = useState([
@@ -15,6 +16,7 @@ const App = () => {
   ]);
 
   const [search, setSearch] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
 
   // create note || add note
   const addNote = (text) => {
@@ -39,7 +41,8 @@ const App = () => {
   };
 
   return (
-    <div className="py-5">
+    <div className={`${darkMode && "dark_mode"}`}>
+      <Toolbar handleToggleDarkMode={setDarkMode} />
       <Search handleSearch={setSearch} />
       <NoteList
         notes={notes.filter((note) =>
