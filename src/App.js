@@ -42,7 +42,9 @@ const App = () => {
     <div className="py-5">
       <Search handleSearch={setSearch} />
       <NoteList
-        notes={notes}
+        notes={notes.filter((note) =>
+          note.text.toLocaleLowerCase().includes(search)
+        )}
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
       />
