@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 // nanoid
 import { nanoid } from "nanoid";
@@ -13,7 +14,7 @@ const App = () => {
   ]);
 
   return (
-    <div>
+    <div className="py-5">
       <NoteList notes={notes} />
     </div>
   );

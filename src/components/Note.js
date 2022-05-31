@@ -7,7 +7,7 @@ const Note = ({ id, text, date }) => {
       <h3 className="mb-5">{text}</h3>
       <div>
         <span className="mx-5 px-5">{date}</span>
-        <FaTrash className="mx-5 text-danger" />
+        <FaTrash className="mx-5 text-danger" style={{ cursor: "pointer" }} />
       </div>
     </div>
   );
