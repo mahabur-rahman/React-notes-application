@@ -13,9 +13,14 @@ const App = () => {
     { id: nanoid(), text: "Third note", date: "12/5/2022" },
   ]);
 
+  // addNote
+  const addNote = (text) => {
+    console.log(text);
+  };
+
   return (
     <div className="py-5">
-      <NoteList notes={notes} />
+      <NoteList notes={notes} handleAddNote={addNote} />
     </div>
   );
 };

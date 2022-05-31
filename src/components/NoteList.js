@@ -2,7 +2,7 @@ import React from "react";
 import Note from "./Note";
 import AddNote from "./AddNote";
 
-const NoteList = ({ notes }) => {
+const NoteList = ({ notes, handleAddNote }) => {
   return (
     <div className="container">
       <div className="row">
@@ -14,7 +14,7 @@ const NoteList = ({ notes }) => {
           );
         })}
       </div>
-      <AddNote />
+      <AddNote handleAddNote={handleAddNote} />
     </div>
   );
 };
