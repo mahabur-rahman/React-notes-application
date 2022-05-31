@@ -2,9 +2,14 @@ import React, { useState } from "react";
 
 const AddNote = ({ handleAddNote }) => {
   const [text, setText] = useState("");
+  //   console.log(text.length);
+  //   characters limit
+  const characterLimit = 10;
 
   const handleChange = (e) => {
-    setText(e.target.value);
+    if (characterLimit - e.target.value.length >= 0) {
+      setText(e.target.value);
+    }
   };
 
   //   save note after btn click
@@ -29,7 +34,7 @@ const AddNote = ({ handleAddNote }) => {
         onChange={handleChange}
       ></textarea>
       <div className="d-flex align-items-center justify-content-between">
-        <span>200 remaining</span>
+        <span>{characterLimit - text.length} remaining</span>
         <button className="btn btn-warning" onClick={handleClickSave}>
           Save
         </button>
