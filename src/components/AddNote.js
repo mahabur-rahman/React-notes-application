@@ -4,7 +4,7 @@ const AddNote = ({ handleAddNote }) => {
   const [text, setText] = useState("");
   //   console.log(text.length);
   //   characters limit
-  const characterLimit = 10;
+  const characterLimit = 100;
 
   const handleChange = (e) => {
     if (characterLimit - e.target.value.length >= 0) {
@@ -25,7 +25,7 @@ const AddNote = ({ handleAddNote }) => {
   };
 
   return (
-    <div className="mt-3 bg-light p-3">
+    <div className="mt-3 bg-light p-3 add_note">
       <textarea
         placeholder="type note.."
         className="form-control border-0 bg-light"

@@ -13,7 +13,7 @@ const App = () => {
     { id: nanoid(), text: "Third note", date: "12/5/2022" },
   ]);
 
-  // addNote
+  // create note || add note
   const addNote = (text) => {
     // console.log(text);
     const date = new Date();
@@ -28,9 +28,20 @@ const App = () => {
     setNotes(newNote);
   };
 
+  // delete note
+  const deleteNote = (id) => {
+    const newNote = notes.filter((note) => note.id !== id);
+
+    setNotes(newNote);
+  };
+
   return (
     <div className="py-5">
-      <NoteList notes={notes} handleAddNote={addNote} />
+      <NoteList
+        notes={notes}
+        handleAddNote={addNote}
+        handleDeleteNote={deleteNote}
+      />
     </div>
   );
 };

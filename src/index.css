@@ -6,8 +6,13 @@
 
 textarea {
     resize: none;
+    white-space: initial;
 }
 
 button {
     cursor: pointer;
+}
+
+.add_note {
+    white-space: pre-wrap;
 }
