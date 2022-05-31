@@ -17,6 +17,11 @@ button {
     white-space: pre-wrap;
 }
 
+.container {
+    padding: 4rem 0;
+    min-height: 10vh;
+}
+
 
 /* toggle dark mode */
 
@@ -30,4 +35,8 @@ button {
 
 .dark_mode h2 {
     color: #000;
+}
+
+.dark_mode label {
+    color: white;
 }

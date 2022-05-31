@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 // nanoid
@@ -39,6 +39,20 @@ const App = () => {
 
     setNotes(newNote);
   };
+
+  // retrieve data on localStorage
+  useEffect(() => {
+    const savedNotes = JSON.parse(localStorage.getItem("react-notes-app-data"));
+
+    if (savedNotes) {
+      setNotes(savedNotes);
+    }
+  }, []);
+
+  // set note on localStorage
+  useEffect(() => {
+    localStorage.setItem("react-notes-app-data", JSON.stringify(notes));
+  }, [notes]);
 
   return (
     <div className={`${darkMode && "dark_mode"}`}>
