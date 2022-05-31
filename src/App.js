@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { nanoid } from "nanoid";
 // comp
 import NoteList from "./components/NoteList";
+import Search from "./components/Search";
 
 const App = () => {
   const [notes, setNotes] = useState([
@@ -12,6 +13,8 @@ const App = () => {
     { id: nanoid(), text: "Second note", date: "22/4/2022" },
     { id: nanoid(), text: "Third note", date: "12/5/2022" },
   ]);
+
+  const [search, setSearch] = useState("");
 
   // create note || add note
   const addNote = (text) => {
@@ -37,6 +40,7 @@ const App = () => {
 
   return (
     <div className="py-5">
+      <Search handleSearch={setSearch} />
       <NoteList
         notes={notes}
         handleAddNote={addNote}
